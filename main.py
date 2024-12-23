@@ -12,11 +12,10 @@ def main():
     recommender = EnhancedMusicRecommender()
     
     # Get recommendations for a user
-    user_id = "user_2"
+    user_id = "user_1"
     recommendations = recommender.get_recommendations(
         user_id,
-        n_recommendations=11,
-        consider_recent_mood=True
+        n_recommendations=5,
     )
     
     # Print user's recent mood
@@ -31,7 +30,6 @@ def main():
         print(f"Genre: {rec['genre']}")
         print(f"Mood: {rec['mood']}")
         print(f"Danceability: {rec['danceability']:.2f}")
-        print(f"Loudness: {rec['loudness']:.2f}")
         print(f"Energy: {rec['energy']:.2f}")
         print(f"Score: {rec['score']:.2f}")
 

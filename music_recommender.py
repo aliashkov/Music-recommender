@@ -3,6 +3,7 @@ import numpy as np
 from sklearn.metrics.pairwise import cosine_similarity
 from collections import defaultdict
 from datetime import datetime, timedelta
+import librosa
 
 class EnhancedMusicRecommender:
     def __init__(self, tracks_path='output/tracks.csv', users_path='output/users.csv', listening_path='output/listening_history.csv'):
@@ -11,131 +12,184 @@ class EnhancedMusicRecommender:
         self.listening_df = pd.read_csv(listening_path)
         self.listening_df['timestamp'] = pd.to_datetime(self.listening_df['timestamp'])
         
-        self.user_tracks = defaultdict(dict)
+        # Normalize energy and brightness to 0-1 range
+        self._normalize_audio_features()
+        
+        self.user_tracks = defaultdict(list)
         self.track_users = defaultdict(list)
         self.similarity_matrix = None
         self.tracks_matrix = None
         self.track_indices = None
         
         self._initialize_matrices()
-        
+
+    def _normalize_audio_features(self):
+        """Normalize audio features to 0-1 range"""
+        features_to_normalize = ['energy', 'brightness']
+        for feature in features_to_normalize:
+            if feature in self.tracks_df.columns:
+                min_val = self.tracks_df[feature].min()
+                max_val = self.tracks_df[feature].max()
+                self.tracks_df[feature] = (self.tracks_df[feature] - min_val) / (max_val - min_val)
+
     def _initialize_matrices(self):
-        """Initialize user-track matrices from CSV data"""
-        for _, row in self.listening_df.iterrows():
-            self.add_user_track(row['user_id'], row['track_id'], row['play_count'])
-            
-    def add_user_track(self, user_id, track_id, play_count=1):
-        """Add a track listening record for a user"""
-        self.user_tracks[user_id][track_id] = play_count
+        """Initialize user-track matrices with recent listening history"""
+        # Sort listening history by timestamp
+        sorted_listening = self.listening_df.sort_values('timestamp', ascending=False)
+        
+        # Group by user and take last 100 listens
+        for user_id in self.users_df['user_id']:
+            user_history = sorted_listening[sorted_listening['user_id'] == user_id].head(100)
+            for _, row in user_history.iterrows():
+                self.add_user_track(row['user_id'], row['track_id'], row)
+
+    def determine_track_mood(self, track_features):
+        """Determine track mood based on audio features"""
+        # Enhanced mood determination logic
+        valence = track_features.get('valence', 0)
+        energy = track_features.get('energy', 0)
+        danceability = track_features.get('danceability', 0)
+        
+        if valence > 0.7 and energy > 0.7:
+            return 'Happy'
+        elif valence < 0.3 and energy < 0.4:
+            return 'Sad'
+        elif energy > 0.8:
+            return 'Energetic'
+        elif valence < 0.4 and energy > 0.6:
+            return 'Angry'
+        elif valence > 0.6 and energy < 0.4:
+            return 'Peaceful'
+        elif danceability > 0.7:
+            return 'Uplifting'
+        elif valence < 0.5 and energy < 0.5:
+            return 'Melancholic'
+        else:
+            return 'Neutral'
+
+    def add_user_track(self, user_id, track_id, listening_data):
+        """Add a track listening record with timestamp and context"""
+        self.user_tracks[user_id].append({
+            'track_id': track_id,
+            'timestamp': listening_data['timestamp'],
+            'time_of_day': listening_data['time_of_day'],
+            'user_mood': listening_data['user_mood']
+        })
         self.track_users[track_id].append(user_id)
-        
-    def build_matrix(self):
-        """Build user-track matrix with enhanced features"""
-        users = list(self.user_tracks.keys())
-        tracks = list(set([track for user in self.user_tracks.values() for track in user.keys()]))
-        
-        self.track_indices = {track: idx for idx, track in enumerate(tracks)}
-        self.tracks_matrix = np.zeros((len(users), len(tracks)))
-        
-        for i, user in enumerate(users):
-            user_data = self.users_df[self.users_df['user_id'] == user].iloc[0]
-            
-            for track, count in self.user_tracks[user].items():
-                j = self.track_indices[track]
-                track_data = self.tracks_df[self.tracks_df['track_id'] == track].iloc[0]
-                
-                # Calculate weighted score
-                base_score = count
-                
-                # Genre preference bonus
-                #if track_data['genre'] == user_data['preferred_genre']:
-                #    base_score *= 1.2
-                    
-                # Audio feature weights
-                audio_score = (
-                    track_data['danceability'] * 0.2 +
-                    track_data['energy'] * 0.2 +
-                    (track_data['loudness'] / -60) * 0.1  # Normalize loudness
-                )
-                
-                # Popularity factor
-                popularity_weight = track_data['popularity'] / 100
-                
-                # Combined score
-                final_score = base_score * (0.6 + 0.2 * popularity_weight + 0.2 * audio_score)
-                
-                self.tracks_matrix[i][j] = final_score
-                
-        self.similarity_matrix = cosine_similarity(self.tracks_matrix.T)
-        
-    def get_recent_mood(self, user_id, hours=24):
-        """Analyze user's recent listening mood"""
-        recent_cutoff = datetime.now()
-        
-        recent_listening = self.listening_df[
-            (self.listening_df['user_id'] == user_id) &
-            (self.listening_df['timestamp'] >= recent_cutoff - timedelta(hours=hours))
-        ]
-        
-        if len(recent_listening) == 0:
+
+    def get_user_current_context(self, user_id):
+        """Get user's current context based on recent listening patterns"""
+        if not self.user_tracks[user_id]:
             return None
-            
-        mood_counts = recent_listening['user_mood'].value_counts()
-        return mood_counts.index[0] if len(mood_counts) > 0 else None
+
+        recent_listens = sorted(self.user_tracks[user_id], 
+                              key=lambda x: x['timestamp'], 
+                              reverse=True)[:10]
+
+        # Analyze time patterns
+        current_hour = datetime.now().hour
+        time_preference = defaultdict(int)
+        mood_preference = defaultdict(int)
+
+        for listen in recent_listens:
+            listen_hour = int(listen['time_of_day'].split(':')[0])
+            time_preference[listen_hour] += 1
+            mood_preference[listen['user_mood']] += 1
+
+        return {
+            'preferred_time': max(time_preference.items(), key=lambda x: x[1])[0],
+            'current_mood': max(mood_preference.items(), key=lambda x: x[1])[0],
+            'time_of_day': current_hour
+        }
+    
+    def get_recent_mood(self, user_id):
+      """Get user's most recent mood based on listening history"""
+      if user_id not in self.user_tracks:
+        return "Unknown"
+    
+      recent_listens = sorted(self.user_tracks[user_id], 
+                          key=lambda x: x['timestamp'], 
+                          reverse=True)
+    
+      if not recent_listens:
+        return "Unknown"
+    
+      return recent_listens[0]['user_mood']
+
+    def calculate_context_similarity(self, track_data, user_context):
+        """Calculate similarity score based on contextual factors"""
+        if not user_context:
+            return 1.0
+
+        context_score = 1.0
         
-    def get_recommendations(self, user_id, n_recommendations=5, consider_recent_mood=True):
-        """Get track recommendations considering recent mood and enhanced features"""
+        # Time of day compatibility
+        hour_diff = abs(user_context['preferred_time'] - user_context['time_of_day'])
+        time_factor = 1 - (hour_diff / 24)
+        context_score *= (0.8 + 0.2 * time_factor)
+
+        # Mood compatibility
+        track_mood = self.determine_track_mood(track_data)
+        mood_match = 1.2 if track_mood == user_context['current_mood'] else 0.8
+        context_score *= mood_match
+
+        return context_score
+
+    def get_recommendations(self, user_id, n_recommendations=5):
+        """Get personalized track recommendations"""
         if user_id not in self.user_tracks:
             return []
-            
-        if self.similarity_matrix is None:
-            self.build_matrix()
-            
-        user_tracks = self.user_tracks[user_id]
-        user_track_indices = [self.track_indices[track] for track in user_tracks]
+
+        user_context = self.get_user_current_context(user_id)
         
-        # Calculate base recommendation scores
-        scores = np.zeros(len(self.track_indices))
-        for track_idx in user_track_indices:
-            scores += self.similarity_matrix[track_idx]
-            
-        # Apply mood-based filtering
-        if consider_recent_mood:
-            recent_mood = self.get_recent_mood(user_id)
-            if recent_mood:
-                track_ids = list(self.track_indices.keys())
-                mood_multiplier = np.ones(len(scores))
-                
-                for i, track_id in enumerate(track_ids):
-                    track_data = self.tracks_df[self.tracks_df['track_id'] == track_id]
-                    if not track_data.empty:
-                        track_mood = track_data.iloc[0]['mood']
-                        if track_mood == recent_mood:
-                            mood_multiplier[i] = 1.3
-                
-                scores *= mood_multiplier
+        # Get user's recently played tracks
+        recent_tracks = set(listen['track_id'] for listen in self.user_tracks[user_id])
         
-        # Prepare recommendations
-        track_ids = list(self.track_indices.keys())
+        # Calculate recommendation scores
         recommendations = []
-        sorted_indices = np.argsort(scores)[::-1]
-        
-        for idx in sorted_indices:
-            track_id = track_ids[idx]
-            if track_id not in user_tracks:
-                track_info = self.tracks_df[self.tracks_df['track_id'] == track_id].iloc[0]
+        for _, track in self.tracks_df.iterrows():
+            if track['track_id'] not in recent_tracks:
+                # Base score
+                score = track['popularity'] / 100.0
+                
+                # Audio features score
+                audio_score = (
+                    track['danceability'] * 0.3 +
+                    track['energy'] * 0.2 +
+                    track['valence'] * 0.2 +
+                    (1 - track['speechiness']) * 0.15 +
+                    track['acousticness'] * 0.15
+                )
+                
+                # Context score
+                context_score = self.calculate_context_similarity(track, user_context)
+                
+                # Final score
+                final_score = (score * 0.3 + audio_score * 0.4 + context_score * 0.3)
+                
                 recommendations.append({
-                    'track_id': track_id,
-                    'title': track_info['title'],
-                    'artist': track_info['artist'],
-                    'genre': track_info['genre'],
-                    'mood': track_info['mood'],
-                    'danceability': track_info['danceability'],
-                    'loudness': track_info['loudness'],
-                    'energy': track_info['energy'],
-                    'score': scores[idx]
+                    'track_id': track['track_id'],
+                    'title': track['title'],
+                    'artist': track['artist'],
+                    'genre': track['genre'],
+                    'mood': self.determine_track_mood(track),
+                    'danceability': track['danceability'],
+                    'energy': track['energy'],
+                    'valence': track['valence'],
+                    'duration': track['duration_sec'],
+                    'score': final_score
                 })
-                if len(recommendations) >= n_recommendations:
-                    break
-                    
-        return recommendations
+
+        # Sort and return top recommendations
+        recommendations.sort(key=lambda x: x['score'], reverse=True)
+        return recommendations[:n_recommendations]
+
+    def add_track_duration(self, audio_path):
+        """Calculate accurate track duration"""
+        try:
+            y, sr = librosa.load(audio_path)
+            duration = librosa.get_duration(y=y, sr=sr)
+            return int(duration)
+        except Exception as e:
+            print(f"Error calculating duration for {audio_path}: {e}")
+            return None

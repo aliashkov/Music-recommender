@@ -11,6 +11,7 @@ def extract_audio_features(audio_path):
     try:
         print(f"Processing: {audio_path}")
         y, sr = librosa.load(audio_path)
+        duration = librosa.get_duration(y=y, sr=sr)
         
         # Basic Features
         spectral_centroids = librosa.feature.spectral_centroid(y=y, sr=sr).mean()
@@ -87,6 +88,7 @@ def extract_audio_features(audio_path):
             'zero_crossing_rate': float(zero_crossing_rate),
             'spectral_bandwidth': float(spectral_bandwidth),
             'harmonic_mean': float(harmonic_mean),
+            'duration_sec': int(duration),
         }
     except Exception as e:
         print(f"Error processing audio file {audio_path}: {e}")
