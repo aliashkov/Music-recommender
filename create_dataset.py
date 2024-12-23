@@ -5,6 +5,8 @@ import librosa
 import librosa.feature
 import os
 from pathlib import Path
+from audio_mood_classifler import AudioMoodClassifier
+from pathlib import Path
 
 def extract_audio_features(audio_path):
     """Extract audio features from MP3 file"""
@@ -127,6 +129,9 @@ def create_dataset(audio_dir="audio_files"):
     }
 
     # Process audio files if they exist
+    # Initialize mood classifier
+    mood_classifier = AudioMoodClassifier()
+
     audio_dir = Path(audio_dir)
     if audio_dir.exists():
         print(f"Processing audio files from {audio_dir}")
@@ -136,9 +141,13 @@ def create_dataset(audio_dir="audio_files"):
                 print(f"Processing track {track_id}")
                 features = extract_audio_features(str(audio_path))
                 if features:
+                    # Update features
                     for key, value in features.items():
                         if key in tracks_data:
                             tracks_data[key][i] = value
+                    
+                    # Classify mood based on audio features
+                    tracks_data['mood'][i] = mood_classifier.classify_mood(features)
             else:
                 print(f"Audio file not found for {track_id}")
     else:

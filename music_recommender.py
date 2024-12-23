@@ -18,6 +18,7 @@ class EnhancedMusicRecommender:
         self.track_indices = None
         
         self._initialize_matrices()
+        self.build_matrix()  # Build matrix on initialization
         
     def _initialize_matrices(self):
         """Initialize user-track matrices from CSV data"""
@@ -31,9 +32,15 @@ class EnhancedMusicRecommender:
         
     def build_matrix(self):
         """Build user-track matrix with enhanced features"""
+        if not self.user_tracks:
+            return
+            
         users = list(self.user_tracks.keys())
         tracks = list(set([track for user in self.user_tracks.values() for track in user.keys()]))
         
+        if not tracks:
+            return
+            
         self.track_indices = {track: idx for idx, track in enumerate(tracks)}
         self.tracks_matrix = np.zeros((len(users), len(tracks)))
         
@@ -41,31 +48,35 @@ class EnhancedMusicRecommender:
             user_data = self.users_df[self.users_df['user_id'] == user].iloc[0]
             
             for track, count in self.user_tracks[user].items():
-                j = self.track_indices[track]
-                track_data = self.tracks_df[self.tracks_df['track_id'] == track].iloc[0]
-                
-                # Calculate weighted score
-                base_score = count
-                
-                # Genre preference bonus
-                if track_data['genre'] == user_data['preferred_genre']:
-                    base_score *= 1.2
+                if track in self.track_indices:  # Check if track exists in indices
+                    j = self.track_indices[track]
+                    track_data = self.tracks_df[self.tracks_df['track_id'] == track]
                     
-                # Audio feature weights
-                audio_score = (
-                    track_data['danceability'] * 0.2 +
-                    track_data['energy'] * 0.2 +
-                    (track_data['loudness'] / -60) * 0.1  # Normalize loudness
-                )
-                
-                # Popularity factor
-                popularity_weight = track_data['popularity'] / 100
-                
-                # Combined score
-                final_score = base_score * (0.6 + 0.2 * popularity_weight + 0.2 * audio_score)
-                
-                self.tracks_matrix[i][j] = final_score
-                
+                    if not track_data.empty:
+                        track_data = track_data.iloc[0]
+                        
+                        # Calculate weighted score
+                        base_score = count
+                        
+                        # Genre preference bonus
+                        if track_data['genre'] == user_data['preferred_genre']:
+                            base_score *= 1.2
+                            
+                        # Audio feature weights
+                        audio_score = (
+                            track_data['danceability'] * 0.2 +
+                            track_data['energy'] * 0.2 +
+                            (track_data['loudness'] / -60) * 0.1
+                        )
+                        
+                        # Popularity factor
+                        popularity_weight = track_data['popularity'] / 100
+                        
+                        # Combined score
+                        final_score = base_score * (0.6 + 0.2 * popularity_weight + 0.2 * audio_score)
+                        
+                        self.tracks_matrix[i][j] = final_score
+        
         self.similarity_matrix = cosine_similarity(self.tracks_matrix.T)
         
     def get_recent_mood(self, user_id, hours=24):
@@ -85,15 +96,16 @@ class EnhancedMusicRecommender:
         
     def get_recommendations(self, user_id, n_recommendations=5, consider_recent_mood=True):
         """Get track recommendations considering recent mood and enhanced features"""
-        if user_id not in self.user_tracks:
+        if user_id not in self.user_tracks or self.similarity_matrix is None:
             return []
             
-        if self.similarity_matrix is None:
-            self.build_matrix()
-            
         user_tracks = self.user_tracks[user_id]
-        user_track_indices = [self.track_indices[track] for track in user_tracks]
+        print(user_tracks)
+        user_track_indices = [self.track_indices[track] for track in user_tracks if track in self.track_indices]
         
+        if not user_track_indices:
+            return []
+            
         # Calculate base recommendation scores
         scores = np.zeros(len(self.track_indices))
         for track_idx in user_track_indices:
@@ -123,18 +135,20 @@ class EnhancedMusicRecommender:
         for idx in sorted_indices:
             track_id = track_ids[idx]
             if track_id not in user_tracks:
-                track_info = self.tracks_df[self.tracks_df['track_id'] == track_id].iloc[0]
-                recommendations.append({
-                    'track_id': track_id,
-                    'title': track_info['title'],
-                    'artist': track_info['artist'],
-                    'genre': track_info['genre'],
-                    'mood': track_info['mood'],
-                    'danceability': track_info['danceability'],
-                    'energy': track_info['energy'],
-                    'score': scores[idx]
-                })
-                if len(recommendations) >= n_recommendations:
-                    break
+                track_data = self.tracks_df[self.tracks_df['track_id'] == track_id]
+                if not track_data.empty:
+                    track_info = track_data.iloc[0]
+                    recommendations.append({
+                        'track_id': track_id,
+                        'title': track_info['title'],
+                        'artist': track_info['artist'],
+                        'genre': track_info['genre'],
+                        'mood': track_info['mood'],
+                        'danceability': track_info['danceability'],
+                        'energy': track_info['energy'],
+                        'score': scores[idx]
+                    })
+                    if len(recommendations) >= n_recommendations:
+                        break
                     
         return recommendations
