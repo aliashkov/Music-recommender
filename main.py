@@ -4,15 +4,15 @@ import os
 
 def main():
     # Create dataset if it doesn't exist
-    #if not all(os.path.exists(f) for f in ['tracks.csv', 'users.csv', 'listening_history.csv']):
-    #    print("Creating new dataset...")
-    #    create_dataset()
+    if not all(os.path.exists(f) for f in ['output/tracks.csv', 'output/users.csv', 'output/listening_history.csv']):
+        print("Creating new dataset...")
+        create_dataset()
     
     # Initialize recommender
     recommender = EnhancedMusicRecommender()
     
     # Get recommendations for a user
-    user_id = "user_1"
+    user_id = "user_2"
     recommendations = recommender.get_recommendations(
         user_id,
         n_recommendations=5,
@@ -31,6 +31,7 @@ def main():
         print(f"Genre: {rec['genre']}")
         print(f"Mood: {rec['mood']}")
         print(f"Danceability: {rec['danceability']:.2f}")
+        print(f"Loudness: {rec['loudness']:.2f}")
         print(f"Energy: {rec['energy']:.2f}")
         print(f"Score: {rec['score']:.2f}")
 

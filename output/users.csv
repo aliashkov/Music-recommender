@@ -1,21 +1,21 @@
-user_id,preferred_genre,preferred_mood,preferred_occasion,activity_level,age_group,listening_frequency
-user_1,Blues,Anxious,Meditation,Medium,25-34,Daily
-user_2,Jazz,Dark,Work,High,13-17,Monthly
-user_3,Hip Hop,Dark,Relaxation,Medium,13-17,Daily
-user_4,Latin,Sad,Relaxation,Low,35-44,Daily
-user_5,Hip Hop,Melancholic,Study,High,25-34,Daily
-user_6,Funk,Powerful,Study,Low,25-34,Monthly
-user_7,Hip Hop,Uplifting,Study,Low,55+,Monthly
-user_8,Jazz,Energetic,Sleep,Medium,55+,Daily
-user_9,Soul,Melancholic,Dating,Medium,55+,Daily
-user_10,R&B,Anxious,Road Trip,Medium,55+,Weekly
-user_11,Jazz,Uplifting,Dating,Medium,55+,Daily
-user_12,Folk,Dark,Party,Medium,55+,Weekly
-user_13,Rock,Calm,Dating,High,45-54,Daily
-user_14,Metal,Anxious,Sleep,Low,25-34,Weekly
-user_15,Soul,Happy,Party,Low,55+,Monthly
-user_16,R&B,Sad,Dating,Low,25-34,Daily
-user_17,Pop,Happy,Sleep,Low,25-34,Daily
-user_18,Metal,Powerful,Road Trip,Medium,18-24,Daily
-user_19,Rock,Anxious,Dating,Low,45-54,Daily
-user_20,Blues,Angry,Sleep,High,55+,Weekly
+user_id
+user_1
+user_2
+user_3
+user_4
+user_5
+user_6
+user_7
+user_8
+user_9
+user_10
+user_11
+user_12
+user_13
+user_14
+user_15
+user_16
+user_17
+user_18
+user_19
+user_20

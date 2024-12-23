@@ -47,20 +47,31 @@ def extract_audio_features(audio_path):
         # Danceability
         danceability = float(np.mean(pulse) * np.mean(rms))
         danceability = min(max(danceability / 10, 0), 1)
+
+        print("danceability:", danceability)
         
         # Valence (emotional content) - simplified approximation
         valence = float((harmonic_mean + np.mean(chroma_means)) / 2)
         valence = min(max(valence, 0), 1)
+
+        print("valence:", valence)
         
         # Speechiness approximation
         speechiness = float(np.mean(mfcc_means[1:5]) / 100)  # Using early MFCCs
         speechiness = min(max(speechiness, 0), 1)
+
+        print("speechiness:", speechiness)
         
         # Acousticness approximation
         acousticness = 1 - (float(spectral_rolloff) / (sr/2))
+
+        print("acousticness:", acousticness)
         
         # Instrumentalness approximation
         instrumentalness = float(np.mean(contrast_means) / 100)
+
+
+        print("Instrumentals:", instrumentalness)
         
         print(f"Features extracted successfully for {audio_path}")
         
@@ -84,9 +95,9 @@ def extract_audio_features(audio_path):
 
 def create_dataset(audio_dir="audio_files"):
     np.random.seed(42)
-    n_tracks = 10  # Increased number of tracks
+    n_tracks = 40  # Increased number of tracks
     n_users = 20   # Increased number of users
-    n_listening_records = 100  # Increased number of records
+    n_listening_records = 250  # Increased number of records
 
     # Extended lists of categories
     genres = ['Rock', 'Pop', 'Hip Hop', 'Jazz', 'Classical', 'Electronic', 'R&B', 'Metal', 
@@ -147,12 +158,12 @@ def create_dataset(audio_dir="audio_files"):
     # Enhanced user data
     users_data = {
         'user_id': [f'user_{i}' for i in range(1, n_users + 1)],
-        'preferred_genre': np.random.choice(genres, n_users),
-        'preferred_mood': np.random.choice(moods, n_users),
-        'preferred_occasion': np.random.choice(occasions, n_users),
-        'activity_level': np.random.choice(['Low', 'Medium', 'High'], n_users),
-        'age_group': np.random.choice(['13-17', '18-24', '25-34', '35-44', '45-54', '55+'], n_users),
-        'listening_frequency': np.random.choice(['Daily', 'Weekly', 'Monthly'], n_users)
+        #'preferred_genre': np.random.choice(genres, n_users),
+        #'preferred_mood': np.random.choice(moods, n_users),
+        #'preferred_occasion': np.random.choice(occasions, n_users),
+        #'activity_level': np.random.choice(['Low', 'Medium', 'High'], n_users),
+        #'age_group': np.random.choice(['13-17', '18-24', '25-34', '35-44', '45-54', '55+'], n_users),
+        #'listening_frequency': np.random.choice(['Daily', 'Weekly', 'Monthly'], n_users)
     }
 
     # Enhanced listening history
@@ -167,9 +178,9 @@ def create_dataset(audio_dir="audio_files"):
         'play_count': np.random.randint(1, 11, n_listening_records),
         'time_of_day': [d.strftime('%H:%M') for d in dates],
         'user_mood': np.random.choice(moods, n_listening_records),
-        'listening_context': np.random.choice(occasions, n_listening_records),
-        'skip_rate': np.random.uniform(0, 1, n_listening_records),
-        'rating': np.random.randint(1, 6, n_listening_records)
+        #'listening_context': np.random.choice(occasions, n_listening_records),
+        #'skip_rate': np.random.uniform(0, 1, n_listening_records),
+        #'rating': np.random.randint(1, 6, n_listening_records)
     }
 
     # Create DataFrames and save to CSV

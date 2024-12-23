@@ -48,8 +48,8 @@ class EnhancedMusicRecommender:
                 base_score = count
                 
                 # Genre preference bonus
-                if track_data['genre'] == user_data['preferred_genre']:
-                    base_score *= 1.2
+                #if track_data['genre'] == user_data['preferred_genre']:
+                #    base_score *= 1.2
                     
                 # Audio feature weights
                 audio_score = (
@@ -131,6 +131,7 @@ class EnhancedMusicRecommender:
                     'genre': track_info['genre'],
                     'mood': track_info['mood'],
                     'danceability': track_info['danceability'],
+                    'loudness': track_info['loudness'],
                     'energy': track_info['energy'],
                     'score': scores[idx]
                 })
