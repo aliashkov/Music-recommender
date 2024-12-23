@@ -12,7 +12,7 @@ def main():
     recommender = EnhancedMusicRecommender()
     
     # Get recommendations for a user
-    user_id = "user_2"
+    user_id = "user_1"
     recommendations = recommender.get_recommendations(
         user_id,
         n_recommendations=5,
