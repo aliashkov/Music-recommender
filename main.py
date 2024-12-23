@@ -15,7 +15,7 @@ def main():
     user_id = "user_2"
     recommendations = recommender.get_recommendations(
         user_id,
-        n_recommendations=5,
+        n_recommendations=11,
         consider_recent_mood=True
     )
     

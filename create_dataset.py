@@ -45,8 +45,7 @@ def extract_audio_features(audio_path):
         pulse = librosa.beat.plp(onset_envelope=onset_env, sr=sr)
         
         # Danceability
-        danceability = float(np.mean(pulse) * np.mean(rms))
-        danceability = min(max(danceability / 10, 0), 1)
+        danceability = float(np.mean(pulse) * np.mean(rms) * 10)
 
         print("danceability:", danceability)
         
@@ -155,15 +154,8 @@ def create_dataset(audio_dir="audio_files"):
     else:
         print(f"Audio directory {audio_dir} not found. Using random values.")
 
-    # Enhanced user data
     users_data = {
         'user_id': [f'user_{i}' for i in range(1, n_users + 1)],
-        #'preferred_genre': np.random.choice(genres, n_users),
-        #'preferred_mood': np.random.choice(moods, n_users),
-        #'preferred_occasion': np.random.choice(occasions, n_users),
-        #'activity_level': np.random.choice(['Low', 'Medium', 'High'], n_users),
-        #'age_group': np.random.choice(['13-17', '18-24', '25-34', '35-44', '45-54', '55+'], n_users),
-        #'listening_frequency': np.random.choice(['Daily', 'Weekly', 'Monthly'], n_users)
     }
 
     # Enhanced listening history
@@ -178,9 +170,6 @@ def create_dataset(audio_dir="audio_files"):
         'play_count': np.random.randint(1, 11, n_listening_records),
         'time_of_day': [d.strftime('%H:%M') for d in dates],
         'user_mood': np.random.choice(moods, n_listening_records),
-        #'listening_context': np.random.choice(occasions, n_listening_records),
-        #'skip_rate': np.random.uniform(0, 1, n_listening_records),
-        #'rating': np.random.randint(1, 6, n_listening_records)
     }
 
     # Create DataFrames and save to CSV
