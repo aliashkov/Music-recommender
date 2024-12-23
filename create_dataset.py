@@ -84,7 +84,7 @@ def extract_audio_features(audio_path):
 
 def create_dataset(audio_dir="audio_files"):
     np.random.seed(42)
-    n_tracks = 100  # Increased number of tracks
+    n_tracks = 10  # Increased number of tracks
     n_users = 200   # Increased number of users
     n_listening_records = 5000  # Increased number of records
 

@@ -5,7 +5,7 @@ from collections import defaultdict
 from datetime import datetime, timedelta
 
 class EnhancedMusicRecommender:
-    def __init__(self, tracks_path='tracks.csv', users_path='users.csv', listening_path='listening_history.csv'):
+    def __init__(self, tracks_path='output/tracks.csv', users_path='output/users.csv', listening_path='output/listening_history.csv'):
         self.tracks_df = pd.read_csv(tracks_path)
         self.users_df = pd.read_csv(users_path)
         self.listening_df = pd.read_csv(listening_path)

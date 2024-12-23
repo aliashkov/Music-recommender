@@ -4,9 +4,9 @@ import os
 
 def main():
     # Create dataset if it doesn't exist
-    if not all(os.path.exists(f) for f in ['tracks.csv', 'users.csv', 'listening_history.csv']):
-        print("Creating new dataset...")
-        create_dataset()
+    #if not all(os.path.exists(f) for f in ['tracks.csv', 'users.csv', 'listening_history.csv']):
+    #    print("Creating new dataset...")
+    #    create_dataset()
     
     # Initialize recommender
     recommender = EnhancedMusicRecommender()

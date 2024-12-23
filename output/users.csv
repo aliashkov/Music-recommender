@@ -1,201 +1,201 @@
 user_id,preferred_genre,preferred_mood,preferred_occasion,activity_level,age_group,listening_frequency
-user_1,Funk,Romantic,Sleep,High,13-17,Daily
-user_2,Folk,Dark,Dating,Medium,13-17,Monthly
-user_3,R&B,Dark,Dating,High,35-44,Monthly
-user_4,Hip Hop,Sad,Workout,High,13-17,Weekly
-user_5,Folk,Sad,Workout,Low,55+,Monthly
-user_6,Hip Hop,Energetic,Study,High,25-34,Daily
-user_7,Classical,Happy,Study,Medium,45-54,Weekly
-user_8,Folk,Calm,Party,High,25-34,Daily
-user_9,Country,Powerful,Study,High,13-17,Weekly
-user_10,Reggae,Calm,Road Trip,Low,25-34,Monthly
-user_11,Reggae,Powerful,Dating,High,55+,Weekly
-user_12,Hip Hop,Dark,Gaming,High,55+,Weekly
-user_13,R&B,Dark,Road Trip,Medium,13-17,Daily
-user_14,Soul,Dark,Meditation,Low,35-44,Daily
-user_15,Soul,Uplifting,Sleep,Low,25-34,Weekly
-user_16,Country,Melancholic,Study,Low,35-44,Monthly
-user_17,Rock,Powerful,Sleep,High,35-44,Monthly
-user_18,Jazz,Sad,Work,Low,18-24,Daily
-user_19,Jazz,Uplifting,Party,High,13-17,Monthly
-user_20,R&B,Angry,Work,High,45-54,Daily
-user_21,Metal,Calm,Party,Medium,55+,Monthly
-user_22,Rock,Anxious,Workout,Medium,55+,Weekly
-user_23,Classical,Nostalgic,Sleep,Medium,13-17,Daily
-user_24,R&B,Romantic,Party,Medium,45-54,Daily
-user_25,Country,Sad,Relaxation,Medium,55+,Weekly
-user_26,Jazz,Peaceful,Road Trip,High,13-17,Daily
-user_27,World,Dreamy,Party,High,55+,Monthly
-user_28,Jazz,Angry,Party,Low,35-44,Monthly
-user_29,Jazz,Anxious,Road Trip,High,25-34,Daily
-user_30,Country,Sad,Sleep,High,25-34,Monthly
-user_31,Electronic,Nostalgic,Sleep,Medium,55+,Daily
-user_32,R&B,Uplifting,Road Trip,High,18-24,Weekly
-user_33,Pop,Happy,Work,Medium,45-54,Daily
-user_34,Funk,Romantic,Relaxation,Low,45-54,Weekly
-user_35,Classical,Sad,Gaming,Low,45-54,Monthly
-user_36,Jazz,Melancholic,Meditation,High,35-44,Weekly
-user_37,Funk,Dark,Relaxation,Low,45-54,Monthly
-user_38,Reggae,Dark,Sleep,High,25-34,Daily
-user_39,Soul,Romantic,Gaming,Low,35-44,Monthly
-user_40,World,Nostalgic,Workout,Medium,13-17,Daily
-user_41,Hip Hop,Powerful,Study,Medium,45-54,Daily
-user_42,R&B,Anxious,Party,Medium,45-54,Weekly
-user_43,Blues,Uplifting,Road Trip,Medium,13-17,Weekly
-user_44,Country,Dark,Road Trip,High,45-54,Weekly
-user_45,Electronic,Sad,Party,Low,13-17,Weekly
-user_46,Reggae,Peaceful,Study,High,35-44,Monthly
-user_47,R&B,Calm,Meditation,Medium,25-34,Monthly
-user_48,Classical,Powerful,Study,High,13-17,Monthly
-user_49,World,Calm,Gaming,Low,18-24,Daily
-user_50,Electronic,Angry,Study,High,13-17,Monthly
-user_51,Classical,Anxious,Gaming,Low,45-54,Monthly
-user_52,Reggae,Energetic,Study,High,35-44,Monthly
-user_53,R&B,Powerful,Meditation,Low,55+,Weekly
-user_54,Pop,Happy,Meditation,Low,35-44,Monthly
-user_55,Reggae,Romantic,Sleep,Medium,55+,Daily
-user_56,Blues,Angry,Party,Low,13-17,Weekly
-user_57,Classical,Energetic,Meditation,Medium,25-34,Daily
-user_58,Electronic,Uplifting,Gaming,Medium,18-24,Monthly
-user_59,Electronic,Powerful,Meditation,Medium,35-44,Weekly
-user_60,Funk,Melancholic,Sleep,High,45-54,Daily
-user_61,Classical,Melancholic,Road Trip,High,55+,Monthly
-user_62,Latin,Happy,Gaming,High,45-54,Daily
-user_63,R&B,Anxious,Sleep,High,25-34,Daily
-user_64,Latin,Dark,Work,Low,55+,Daily
-user_65,Metal,Sad,Work,Low,35-44,Monthly
-user_66,R&B,Angry,Workout,High,13-17,Monthly
-user_67,Classical,Dreamy,Study,Low,45-54,Daily
-user_68,Rock,Powerful,Party,Low,25-34,Weekly
-user_69,World,Angry,Dating,Medium,35-44,Weekly
-user_70,Classical,Powerful,Relaxation,Medium,35-44,Monthly
-user_71,Latin,Romantic,Sleep,Medium,35-44,Monthly
-user_72,Pop,Powerful,Road Trip,Medium,35-44,Monthly
-user_73,World,Romantic,Relaxation,Low,55+,Monthly
-user_74,Classical,Powerful,Road Trip,High,35-44,Monthly
-user_75,Classical,Melancholic,Relaxation,Low,45-54,Weekly
-user_76,Pop,Melancholic,Sleep,Low,25-34,Monthly
-user_77,Classical,Anxious,Dating,Low,55+,Daily
-user_78,World,Nostalgic,Relaxation,Medium,35-44,Daily
-user_79,Soul,Peaceful,Sleep,Medium,18-24,Weekly
-user_80,Jazz,Peaceful,Meditation,Medium,18-24,Daily
-user_81,Rock,Nostalgic,Dating,High,25-34,Weekly
-user_82,Hip Hop,Dark,Gaming,Low,13-17,Weekly
-user_83,Rock,Peaceful,Road Trip,High,13-17,Daily
-user_84,Country,Anxious,Work,Medium,55+,Monthly
-user_85,Blues,Dreamy,Study,High,55+,Daily
-user_86,Funk,Dreamy,Work,Low,55+,Daily
-user_87,Classical,Sad,Dating,Low,13-17,Weekly
-user_88,Jazz,Sad,Gaming,Medium,18-24,Daily
-user_89,Soul,Dreamy,Road Trip,Medium,13-17,Weekly
-user_90,R&B,Angry,Gaming,High,45-54,Monthly
-user_91,Classical,Calm,Relaxation,Medium,35-44,Monthly
-user_92,Latin,Nostalgic,Road Trip,Medium,55+,Monthly
-user_93,Reggae,Sad,Relaxation,Low,18-24,Daily
-user_94,Jazz,Energetic,Sleep,Medium,25-34,Weekly
-user_95,Pop,Melancholic,Dating,Medium,25-34,Monthly
-user_96,Jazz,Romantic,Sleep,Low,35-44,Weekly
-user_97,Soul,Anxious,Workout,Low,18-24,Weekly
-user_98,Country,Dreamy,Gaming,High,13-17,Monthly
-user_99,Pop,Peaceful,Relaxation,Medium,13-17,Monthly
-user_100,Metal,Nostalgic,Meditation,Low,45-54,Weekly
-user_101,Hip Hop,Angry,Sleep,High,45-54,Monthly
-user_102,Folk,Dreamy,Workout,High,13-17,Weekly
-user_103,World,Happy,Party,Medium,25-34,Weekly
-user_104,Jazz,Romantic,Work,Medium,55+,Monthly
-user_105,World,Energetic,Road Trip,High,25-34,Daily
-user_106,Electronic,Peaceful,Workout,Low,45-54,Monthly
-user_107,Latin,Energetic,Dating,High,35-44,Daily
-user_108,Classical,Melancholic,Sleep,Medium,13-17,Weekly
-user_109,Latin,Dreamy,Dating,Low,45-54,Weekly
-user_110,World,Powerful,Work,Low,45-54,Daily
-user_111,Rock,Melancholic,Meditation,High,55+,Weekly
-user_112,Folk,Anxious,Gaming,Medium,13-17,Daily
-user_113,Soul,Dark,Gaming,High,55+,Daily
-user_114,Rock,Angry,Dating,High,13-17,Weekly
-user_115,Metal,Romantic,Relaxation,High,55+,Daily
-user_116,Folk,Uplifting,Meditation,Low,25-34,Monthly
-user_117,Folk,Uplifting,Gaming,Low,35-44,Monthly
-user_118,Rock,Romantic,Meditation,Medium,35-44,Weekly
-user_119,Pop,Happy,Workout,Medium,13-17,Weekly
-user_120,Country,Anxious,Meditation,High,18-24,Daily
-user_121,Soul,Angry,Study,High,45-54,Daily
-user_122,World,Energetic,Work,High,45-54,Daily
-user_123,Rock,Happy,Gaming,Medium,13-17,Daily
-user_124,Latin,Calm,Meditation,Low,55+,Monthly
-user_125,Pop,Romantic,Dating,Low,18-24,Monthly
-user_126,Latin,Energetic,Party,High,25-34,Weekly
-user_127,Soul,Uplifting,Study,High,55+,Daily
-user_128,Country,Sad,Study,High,55+,Daily
-user_129,Metal,Nostalgic,Relaxation,High,13-17,Weekly
-user_130,Classical,Dark,Meditation,Medium,13-17,Daily
-user_131,Country,Uplifting,Relaxation,Low,45-54,Daily
-user_132,Blues,Angry,Relaxation,High,13-17,Daily
-user_133,R&B,Powerful,Party,Medium,13-17,Daily
-user_134,Pop,Melancholic,Workout,High,13-17,Daily
-user_135,Metal,Nostalgic,Meditation,High,45-54,Weekly
-user_136,Blues,Nostalgic,Sleep,Low,25-34,Daily
-user_137,Electronic,Sad,Gaming,High,25-34,Weekly
-user_138,Metal,Dark,Relaxation,Low,13-17,Daily
-user_139,Rock,Dreamy,Work,Low,45-54,Monthly
-user_140,Funk,Dark,Road Trip,Low,25-34,Monthly
-user_141,Rock,Calm,Work,Medium,55+,Monthly
-user_142,Country,Calm,Party,Medium,25-34,Monthly
-user_143,R&B,Peaceful,Party,Low,25-34,Weekly
-user_144,Metal,Uplifting,Dating,High,45-54,Weekly
-user_145,World,Uplifting,Workout,Low,55+,Daily
-user_146,Hip Hop,Uplifting,Gaming,High,45-54,Monthly
-user_147,Classical,Peaceful,Relaxation,Low,13-17,Weekly
-user_148,Soul,Anxious,Work,High,35-44,Daily
-user_149,Country,Happy,Road Trip,Medium,25-34,Daily
-user_150,Rock,Powerful,Party,High,35-44,Weekly
-user_151,R&B,Powerful,Party,Low,45-54,Monthly
-user_152,Classical,Dark,Workout,Medium,45-54,Daily
-user_153,Metal,Sad,Road Trip,High,45-54,Monthly
-user_154,World,Angry,Road Trip,High,35-44,Monthly
-user_155,Metal,Dark,Workout,High,45-54,Monthly
-user_156,Folk,Calm,Party,High,13-17,Daily
-user_157,R&B,Nostalgic,Gaming,High,45-54,Monthly
-user_158,Blues,Energetic,Meditation,Medium,18-24,Daily
-user_159,Rock,Melancholic,Meditation,Medium,35-44,Monthly
-user_160,World,Peaceful,Workout,Medium,18-24,Daily
-user_161,Hip Hop,Romantic,Road Trip,Medium,45-54,Monthly
-user_162,Metal,Energetic,Relaxation,Low,13-17,Weekly
-user_163,Hip Hop,Angry,Workout,Medium,25-34,Monthly
-user_164,Metal,Uplifting,Gaming,High,55+,Monthly
-user_165,Rock,Calm,Workout,High,55+,Daily
-user_166,Classical,Dreamy,Study,Medium,45-54,Daily
-user_167,Jazz,Calm,Work,High,13-17,Monthly
-user_168,Classical,Calm,Road Trip,Medium,35-44,Weekly
-user_169,Metal,Uplifting,Dating,High,18-24,Weekly
-user_170,Latin,Romantic,Dating,Low,18-24,Daily
-user_171,Funk,Peaceful,Road Trip,Low,18-24,Weekly
-user_172,Reggae,Energetic,Gaming,Medium,35-44,Monthly
-user_173,Jazz,Uplifting,Study,Medium,55+,Daily
-user_174,Blues,Angry,Study,Medium,13-17,Monthly
-user_175,Jazz,Peaceful,Party,High,35-44,Daily
-user_176,Funk,Angry,Work,Medium,18-24,Daily
-user_177,Hip Hop,Peaceful,Meditation,Low,45-54,Daily
-user_178,R&B,Romantic,Sleep,High,25-34,Daily
-user_179,Hip Hop,Melancholic,Gaming,Medium,35-44,Weekly
-user_180,Country,Angry,Sleep,High,35-44,Monthly
-user_181,Hip Hop,Uplifting,Sleep,High,13-17,Monthly
-user_182,Blues,Peaceful,Road Trip,Medium,13-17,Monthly
-user_183,Latin,Powerful,Dating,High,35-44,Daily
-user_184,Classical,Calm,Dating,Low,18-24,Weekly
-user_185,Classical,Anxious,Meditation,Low,25-34,Monthly
-user_186,Reggae,Dark,Road Trip,High,13-17,Weekly
-user_187,Electronic,Dreamy,Sleep,Medium,18-24,Daily
-user_188,Soul,Calm,Relaxation,High,45-54,Monthly
-user_189,Metal,Happy,Dating,Low,13-17,Weekly
-user_190,Soul,Melancholic,Gaming,High,18-24,Daily
-user_191,Latin,Melancholic,Gaming,High,18-24,Weekly
-user_192,Electronic,Calm,Party,Low,25-34,Monthly
-user_193,Funk,Dreamy,Workout,High,25-34,Monthly
-user_194,Soul,Powerful,Relaxation,High,45-54,Daily
-user_195,Soul,Energetic,Dating,Medium,18-24,Daily
-user_196,Country,Romantic,Study,Medium,55+,Daily
-user_197,Rock,Angry,Dating,Low,18-24,Weekly
-user_198,Funk,Uplifting,Party,Low,25-34,Weekly
-user_199,Metal,Melancholic,Gaming,Low,55+,Weekly
-user_200,Soul,Calm,Sleep,Medium,13-17,Daily
+user_1,Blues,Melancholic,Relaxation,Medium,55+,Monthly
+user_2,Jazz,Uplifting,Meditation,Low,55+,Weekly
+user_3,Hip Hop,Energetic,Relaxation,Low,55+,Daily
+user_4,Latin,Sad,Sleep,Medium,13-17,Weekly
+user_5,Hip Hop,Dark,Gaming,High,25-34,Monthly
+user_6,Funk,Romantic,Meditation,High,25-34,Daily
+user_7,Hip Hop,Dreamy,Relaxation,Medium,45-54,Weekly
+user_8,Jazz,Anxious,Dating,Medium,35-44,Daily
+user_9,Soul,Uplifting,Study,Medium,55+,Weekly
+user_10,R&B,Melancholic,Party,Medium,18-24,Monthly
+user_11,Jazz,Dark,Study,Medium,35-44,Monthly
+user_12,Folk,Calm,Sleep,High,35-44,Daily
+user_13,Rock,Dreamy,Workout,High,25-34,Weekly
+user_14,Metal,Calm,Party,Medium,35-44,Daily
+user_15,Soul,Happy,Work,Low,55+,Daily
+user_16,R&B,Romantic,Dating,Medium,55+,Weekly
+user_17,Pop,Powerful,Work,Low,13-17,Weekly
+user_18,Metal,Powerful,Meditation,Medium,55+,Weekly
+user_19,Rock,Anxious,Party,Medium,55+,Monthly
+user_20,Blues,Energetic,Work,High,25-34,Daily
+user_21,Country,Melancholic,Work,Low,55+,Daily
+user_22,Folk,Anxious,Relaxation,Low,13-17,Monthly
+user_23,Folk,Sad,Study,High,18-24,Weekly
+user_24,Pop,Sad,Relaxation,High,25-34,Monthly
+user_25,R&B,Melancholic,Party,High,18-24,Monthly
+user_26,Funk,Peaceful,Party,High,25-34,Monthly
+user_27,Reggae,Energetic,Sleep,Low,45-54,Daily
+user_28,Latin,Dark,Relaxation,Low,35-44,Monthly
+user_29,Hip Hop,Uplifting,Road Trip,Medium,45-54,Daily
+user_30,R&B,Powerful,Study,Medium,55+,Daily
+user_31,Country,Dreamy,Party,High,18-24,Daily
+user_32,Soul,Peaceful,Sleep,High,55+,Weekly
+user_33,Latin,Uplifting,Relaxation,High,35-44,Daily
+user_34,Soul,Uplifting,Study,Medium,25-34,Daily
+user_35,Folk,Peaceful,Relaxation,Medium,35-44,Weekly
+user_36,Jazz,Happy,Work,Medium,13-17,Daily
+user_37,Country,Calm,Sleep,Medium,35-44,Monthly
+user_38,Rock,Uplifting,Study,Medium,13-17,Monthly
+user_39,Pop,Peaceful,Gaming,Medium,35-44,Daily
+user_40,Rock,Peaceful,Meditation,Medium,13-17,Weekly
+user_41,Soul,Nostalgic,Meditation,High,18-24,Monthly
+user_42,Reggae,Anxious,Study,High,55+,Weekly
+user_43,Country,Angry,Relaxation,High,55+,Weekly
+user_44,Classical,Happy,Sleep,High,45-54,Monthly
+user_45,Classical,Romantic,Meditation,Medium,55+,Weekly
+user_46,Soul,Angry,Sleep,Low,25-34,Monthly
+user_47,Blues,Anxious,Meditation,Medium,35-44,Weekly
+user_48,R&B,Anxious,Work,Low,45-54,Monthly
+user_49,Folk,Anxious,Relaxation,High,25-34,Daily
+user_50,Folk,Angry,Work,Medium,25-34,Monthly
+user_51,Hip Hop,Melancholic,Meditation,High,13-17,Monthly
+user_52,Hip Hop,Calm,Gaming,Medium,55+,Monthly
+user_53,Soul,Peaceful,Gaming,High,18-24,Monthly
+user_54,Soul,Dreamy,Work,Low,18-24,Weekly
+user_55,Hip Hop,Calm,Gaming,Low,45-54,Daily
+user_56,Jazz,Powerful,Meditation,Low,18-24,Monthly
+user_57,Metal,Energetic,Study,Medium,35-44,Weekly
+user_58,Electronic,Melancholic,Work,Low,18-24,Daily
+user_59,Metal,Romantic,Workout,Medium,45-54,Daily
+user_60,Rock,Calm,Relaxation,Low,18-24,Daily
+user_61,Metal,Dreamy,Gaming,Low,35-44,Daily
+user_62,Jazz,Sad,Gaming,Medium,13-17,Monthly
+user_63,Blues,Anxious,Party,Medium,45-54,Monthly
+user_64,Rock,Uplifting,Road Trip,Low,13-17,Weekly
+user_65,Metal,Powerful,Work,Medium,13-17,Weekly
+user_66,Jazz,Energetic,Dating,Low,13-17,Weekly
+user_67,Electronic,Happy,Gaming,Medium,25-34,Daily
+user_68,Metal,Romantic,Relaxation,High,55+,Daily
+user_69,Jazz,Energetic,Workout,High,25-34,Monthly
+user_70,Reggae,Anxious,Gaming,High,55+,Daily
+user_71,Hip Hop,Uplifting,Workout,High,13-17,Daily
+user_72,Soul,Melancholic,Meditation,High,45-54,Daily
+user_73,Reggae,Uplifting,Meditation,Low,55+,Weekly
+user_74,Folk,Angry,Road Trip,High,35-44,Weekly
+user_75,Hip Hop,Uplifting,Study,High,35-44,Monthly
+user_76,Folk,Angry,Dating,High,18-24,Daily
+user_77,World,Powerful,Party,High,55+,Daily
+user_78,Pop,Melancholic,Road Trip,Medium,45-54,Monthly
+user_79,Soul,Dark,Sleep,Low,25-34,Daily
+user_80,Reggae,Anxious,Party,High,13-17,Daily
+user_81,Pop,Angry,Work,High,18-24,Weekly
+user_82,Pop,Happy,Relaxation,High,35-44,Monthly
+user_83,Electronic,Uplifting,Sleep,Low,25-34,Monthly
+user_84,Hip Hop,Uplifting,Sleep,Medium,25-34,Monthly
+user_85,Soul,Happy,Road Trip,Low,13-17,Monthly
+user_86,World,Sad,Study,Medium,55+,Weekly
+user_87,Folk,Powerful,Road Trip,High,35-44,Weekly
+user_88,Jazz,Peaceful,Work,High,45-54,Daily
+user_89,Rock,Dark,Gaming,Low,25-34,Daily
+user_90,Jazz,Romantic,Gaming,Low,13-17,Daily
+user_91,Rock,Dreamy,Study,Medium,45-54,Daily
+user_92,Reggae,Angry,Work,Medium,55+,Weekly
+user_93,Classical,Happy,Study,Low,35-44,Monthly
+user_94,Soul,Dreamy,Workout,Medium,55+,Weekly
+user_95,Jazz,Melancholic,Gaming,Low,25-34,Daily
+user_96,Metal,Angry,Sleep,Medium,45-54,Weekly
+user_97,Soul,Peaceful,Dating,Low,45-54,Monthly
+user_98,Metal,Dreamy,Relaxation,Low,45-54,Monthly
+user_99,R&B,Melancholic,Work,Low,25-34,Weekly
+user_100,Hip Hop,Energetic,Party,Medium,25-34,Weekly
+user_101,Rock,Anxious,Study,Medium,55+,Weekly
+user_102,Soul,Uplifting,Relaxation,Medium,18-24,Daily
+user_103,Rock,Energetic,Party,Low,55+,Weekly
+user_104,Soul,Angry,Relaxation,Medium,35-44,Weekly
+user_105,Country,Peaceful,Dating,Medium,13-17,Weekly
+user_106,Blues,Dark,Party,Low,45-54,Monthly
+user_107,Hip Hop,Dreamy,Road Trip,High,18-24,Monthly
+user_108,Electronic,Powerful,Meditation,Low,13-17,Daily
+user_109,R&B,Anxious,Road Trip,Medium,18-24,Daily
+user_110,Electronic,Angry,Gaming,Low,55+,Monthly
+user_111,Reggae,Happy,Meditation,High,25-34,Monthly
+user_112,Reggae,Powerful,Road Trip,Low,45-54,Monthly
+user_113,Electronic,Powerful,Meditation,Medium,55+,Weekly
+user_114,Electronic,Powerful,Meditation,High,13-17,Weekly
+user_115,World,Calm,Sleep,Medium,13-17,Monthly
+user_116,Hip Hop,Angry,Study,High,13-17,Weekly
+user_117,Electronic,Anxious,Study,High,13-17,Weekly
+user_118,Metal,Uplifting,Sleep,Low,13-17,Daily
+user_119,Blues,Uplifting,Relaxation,Low,18-24,Monthly
+user_120,Blues,Angry,Workout,Medium,55+,Monthly
+user_121,Pop,Melancholic,Relaxation,Low,45-54,Weekly
+user_122,Classical,Calm,Party,Low,25-34,Monthly
+user_123,Reggae,Happy,Party,High,25-34,Daily
+user_124,Rock,Powerful,Meditation,Low,55+,Daily
+user_125,Country,Powerful,Road Trip,High,55+,Daily
+user_126,Funk,Angry,Road Trip,High,25-34,Monthly
+user_127,Soul,Melancholic,Study,High,25-34,Monthly
+user_128,Rock,Uplifting,Work,Medium,18-24,Monthly
+user_129,Classical,Uplifting,Relaxation,Medium,35-44,Monthly
+user_130,Country,Peaceful,Gaming,Medium,45-54,Monthly
+user_131,World,Angry,Dating,High,13-17,Daily
+user_132,Soul,Calm,Road Trip,Medium,35-44,Weekly
+user_133,Hip Hop,Sad,Dating,Medium,55+,Daily
+user_134,Jazz,Calm,Meditation,Low,25-34,Monthly
+user_135,Hip Hop,Uplifting,Dating,Medium,35-44,Daily
+user_136,Soul,Uplifting,Gaming,Medium,45-54,Monthly
+user_137,Rock,Energetic,Sleep,High,55+,Monthly
+user_138,Soul,Uplifting,Gaming,High,13-17,Daily
+user_139,Rock,Happy,Dating,High,13-17,Monthly
+user_140,Country,Romantic,Gaming,High,45-54,Weekly
+user_141,Country,Angry,Workout,High,45-54,Monthly
+user_142,Reggae,Dreamy,Meditation,High,25-34,Weekly
+user_143,World,Calm,Relaxation,Medium,13-17,Weekly
+user_144,Reggae,Romantic,Sleep,High,55+,Monthly
+user_145,Classical,Melancholic,Road Trip,High,35-44,Daily
+user_146,Electronic,Sad,Party,Low,55+,Weekly
+user_147,Hip Hop,Happy,Relaxation,Medium,18-24,Daily
+user_148,Country,Anxious,Party,Medium,18-24,Weekly
+user_149,Folk,Nostalgic,Meditation,Medium,45-54,Monthly
+user_150,Classical,Calm,Sleep,High,25-34,Monthly
+user_151,Metal,Romantic,Study,High,18-24,Weekly
+user_152,World,Anxious,Road Trip,High,13-17,Monthly
+user_153,Rock,Sad,Workout,Low,55+,Weekly
+user_154,Reggae,Energetic,Study,High,55+,Monthly
+user_155,Classical,Anxious,Meditation,Low,45-54,Daily
+user_156,Funk,Happy,Relaxation,Medium,35-44,Monthly
+user_157,Hip Hop,Happy,Workout,High,45-54,Daily
+user_158,Country,Dreamy,Gaming,Low,35-44,Monthly
+user_159,Rock,Energetic,Dating,Low,45-54,Daily
+user_160,Jazz,Nostalgic,Workout,High,45-54,Monthly
+user_161,Funk,Angry,Meditation,Medium,45-54,Daily
+user_162,World,Anxious,Work,Medium,35-44,Weekly
+user_163,Classical,Energetic,Dating,Medium,35-44,Weekly
+user_164,Soul,Happy,Party,Low,45-54,Daily
+user_165,R&B,Happy,Road Trip,Low,18-24,Monthly
+user_166,Rock,Romantic,Party,Low,25-34,Daily
+user_167,Soul,Uplifting,Workout,Low,25-34,Monthly
+user_168,Hip Hop,Nostalgic,Party,Medium,25-34,Weekly
+user_169,Soul,Anxious,Meditation,High,35-44,Monthly
+user_170,Pop,Dreamy,Gaming,Low,35-44,Weekly
+user_171,Folk,Dreamy,Relaxation,Low,18-24,Monthly
+user_172,Latin,Anxious,Road Trip,Medium,25-34,Monthly
+user_173,Funk,Powerful,Party,High,25-34,Monthly
+user_174,Electronic,Sad,Party,High,45-54,Daily
+user_175,Latin,Dreamy,Workout,Medium,35-44,Daily
+user_176,Hip Hop,Energetic,Relaxation,Medium,25-34,Weekly
+user_177,Metal,Sad,Study,High,55+,Weekly
+user_178,Reggae,Energetic,Party,Low,18-24,Daily
+user_179,Metal,Melancholic,Meditation,High,55+,Weekly
+user_180,Pop,Happy,Work,Medium,55+,Daily
+user_181,Soul,Uplifting,Road Trip,Low,18-24,Monthly
+user_182,Funk,Romantic,Party,Low,55+,Weekly
+user_183,Electronic,Dreamy,Meditation,Medium,25-34,Weekly
+user_184,R&B,Uplifting,Meditation,Medium,35-44,Daily
+user_185,Pop,Uplifting,Road Trip,Medium,18-24,Weekly
+user_186,Funk,Uplifting,Study,High,45-54,Weekly
+user_187,Blues,Powerful,Meditation,High,55+,Monthly
+user_188,Latin,Sad,Work,Low,18-24,Weekly
+user_189,Pop,Energetic,Meditation,Medium,13-17,Monthly
+user_190,Latin,Dark,Meditation,Low,13-17,Daily
+user_191,Rock,Melancholic,Meditation,Low,35-44,Weekly
+user_192,Metal,Calm,Gaming,Low,25-34,Monthly
+user_193,Rock,Uplifting,Gaming,Low,35-44,Daily
+user_194,Folk,Angry,Study,Medium,35-44,Weekly
+user_195,Blues,Sad,Party,Low,35-44,Daily
+user_196,Electronic,Dreamy,Meditation,Medium,35-44,Weekly
+user_197,Soul,Nostalgic,Relaxation,Medium,45-54,Daily
+user_198,R&B,Dreamy,Party,High,45-54,Daily
+user_199,World,Romantic,Study,Medium,18-24,Monthly
+user_200,Latin,Calm,Sleep,High,13-17,Daily
