@@ -1,0 +1,101 @@
+track_id,title,artist,genre,subgenre,mood,decade,tempo_bpm,popularity,duration_sec
+track_1,Song Title 1,Artist 7,Latin,Rock - Type1,Romantic,1980s,128,32,284
+track_2,Song Title 2,Artist 20,Jazz,Latin - Type1,Melancholic,1970s,158,45,321
+track_3,Song Title 3,Artist 29,Metal,Jazz - Type2,Energetic,2010s,71,61,202
+track_4,Song Title 4,Artist 15,R&B,R&B - Type1,Calm,2010s,84,47,264
+track_5,Song Title 5,Artist 11,Folk,Pop - Type3,Romantic,2000s,111,21,204
+track_6,Song Title 6,Artist 8,Metal,Hip Hop - Type3,Dark,1980s,144,80,197
+track_7,Song Title 7,Artist 29,Classical,Rock - Type1,Romantic,1970s,159,85,485
+track_8,Song Title 8,Artist 21,Pop,Classical - Type1,Calm,2000s,112,75,120
+track_9,Song Title 9,Artist 7,Classical,Rock - Type3,Calm,1990s,82,36,170
+track_10,Song Title 10,Artist 26,Metal,Metal - Type3,Romantic,2000s,75,99,292
+track_11,Song Title 11,Artist 19,Latin,Rock - Type2,Energetic,2000s,116,19,324
+track_12,Song Title 12,Artist 23,Folk,Rock - Type3,Happy,1980s,98,20,379
+track_13,Song Title 13,Artist 11,Folk,Pop - Type2,Calm,1990s,168,57,488
+track_14,Song Title 14,Artist 11,Rock,Pop - Type2,Romantic,2000s,112,18,407
+track_15,Song Title 15,Artist 24,Folk,Electronic - Type2,Romantic,1970s,101,47,153
+track_16,Song Title 16,Artist 21,R&B,R&B - Type2,Melancholic,1970s,117,49,467
+track_17,Song Title 17,Artist 4,Folk,Classical - Type2,Happy,2010s,98,14,214
+track_18,Song Title 18,Artist 8,Metal,Rock - Type1,Dark,1990s,73,15,191
+track_19,Song Title 19,Artist 24,Rock,Rock - Type3,Energetic,1990s,154,31,158
+track_20,Song Title 20,Artist 3,Metal,Hip Hop - Type2,Dark,2010s,64,1,273
+track_21,Song Title 21,Artist 22,Metal,Pop - Type3,Happy,2000s,94,54,369
+track_22,Song Title 22,Artist 21,Hip Hop,Classical - Type3,Happy,1990s,146,3,281
+track_23,Song Title 23,Artist 2,Rock,Latin - Type2,Happy,1970s,152,16,237
+track_24,Song Title 24,Artist 24,Metal,Electronic - Type1,Dark,1970s,166,87,378
+track_25,Song Title 25,Artist 12,Hip Hop,R&B - Type2,Happy,1980s,134,57,498
+track_26,Song Title 26,Artist 30,Hip Hop,Jazz - Type1,Romantic,1990s,77,75,425
+track_27,Song Title 27,Artist 6,Rock,R&B - Type3,Dark,2000s,170,12,387
+track_28,Song Title 28,Artist 2,Classical,Metal - Type1,Happy,2010s,135,74,173
+track_29,Song Title 29,Artist 28,Latin,Rock - Type1,Romantic,2010s,68,96,355
+track_30,Song Title 30,Artist 21,R&B,Electronic - Type1,Melancholic,2000s,133,16,341
+track_31,Song Title 31,Artist 1,Latin,Metal - Type3,Happy,2020s,117,72,370
+track_32,Song Title 32,Artist 12,Folk,Classical - Type3,Dark,1980s,167,76,432
+track_33,Song Title 33,Artist 26,R&B,Jazz - Type1,Calm,2010s,76,24,231
+track_34,Song Title 34,Artist 22,Folk,Pop - Type1,Happy,1990s,161,28,374
+track_35,Song Title 35,Artist 29,Metal,Electronic - Type2,Calm,1980s,66,8,422
+track_36,Song Title 36,Artist 12,Pop,Electronic - Type1,Romantic,1990s,105,92,326
+track_37,Song Title 37,Artist 25,Rock,Rock - Type2,Melancholic,1970s,72,36,348
+track_38,Song Title 38,Artist 17,R&B,Folk - Type1,Energetic,1980s,99,90,460
+track_39,Song Title 39,Artist 27,R&B,Electronic - Type2,Melancholic,2010s,101,8,185
+track_40,Song Title 40,Artist 27,Metal,Hip Hop - Type3,Happy,1980s,68,58,194
+track_41,Song Title 41,Artist 10,Classical,Jazz - Type1,Calm,1980s,109,60,222
+track_42,Song Title 42,Artist 28,Hip Hop,Jazz - Type1,Calm,1980s,86,50,311
+track_43,Song Title 43,Artist 28,Metal,Hip Hop - Type1,Dark,2020s,125,28,371
+track_44,Song Title 44,Artist 16,Electronic,Latin - Type1,Calm,1980s,64,92,345
+track_45,Song Title 45,Artist 15,Hip Hop,Hip Hop - Type2,Dark,1990s,88,41,413
+track_46,Song Title 46,Artist 30,Rock,Hip Hop - Type1,Romantic,1970s,96,100,425
+track_47,Song Title 47,Artist 30,Hip Hop,Jazz - Type3,Energetic,2000s,97,64,217
+track_48,Song Title 48,Artist 15,Classical,R&B - Type3,Happy,1980s,142,27,457
+track_49,Song Title 49,Artist 30,Hip Hop,Jazz - Type1,Dark,2010s,67,63,405
+track_50,Song Title 50,Artist 19,Rock,Folk - Type3,Energetic,1980s,171,17,454
+track_51,Song Title 51,Artist 12,Classical,Rock - Type1,Calm,2010s,168,73,466
+track_52,Song Title 52,Artist 23,Latin,Metal - Type1,Calm,1990s,124,33,427
+track_53,Song Title 53,Artist 20,R&B,R&B - Type3,Energetic,2010s,145,84,368
+track_54,Song Title 54,Artist 25,R&B,Pop - Type1,Calm,2000s,175,77,285
+track_55,Song Title 55,Artist 3,Folk,Metal - Type3,Romantic,1970s,76,92,454
+track_56,Song Title 56,Artist 5,Latin,Rock - Type2,Romantic,2010s,130,29,149
+track_57,Song Title 57,Artist 19,Latin,Folk - Type1,Energetic,2010s,148,13,366
+track_58,Song Title 58,Artist 7,Hip Hop,Folk - Type2,Dark,1970s,104,46,225
+track_59,Song Title 59,Artist 21,R&B,Pop - Type3,Dark,2000s,63,35,170
+track_60,Song Title 60,Artist 9,Rock,R&B - Type2,Energetic,1980s,95,6,200
+track_61,Song Title 61,Artist 7,Jazz,Latin - Type2,Dark,2010s,129,82,252
+track_62,Song Title 62,Artist 18,Jazz,Hip Hop - Type3,Dark,1970s,90,69,404
+track_63,Song Title 63,Artist 4,Classical,R&B - Type2,Romantic,1990s,78,47,257
+track_64,Song Title 64,Artist 25,R&B,Latin - Type2,Dark,1970s,120,25,303
+track_65,Song Title 65,Artist 28,R&B,Folk - Type3,Melancholic,1990s,167,66,449
+track_66,Song Title 66,Artist 14,Jazz,Jazz - Type2,Happy,2000s,113,10,392
+track_67,Song Title 67,Artist 18,R&B,Rock - Type3,Calm,1980s,98,56,459
+track_68,Song Title 68,Artist 26,Hip Hop,Pop - Type2,Melancholic,1970s,150,30,188
+track_69,Song Title 69,Artist 9,Electronic,Rock - Type3,Dark,2020s,133,5,153
+track_70,Song Title 70,Artist 26,Pop,Classical - Type3,Romantic,2010s,149,33,381
+track_71,Song Title 71,Artist 21,Latin,Classical - Type2,Energetic,2000s,78,65,172
+track_72,Song Title 72,Artist 2,Folk,R&B - Type2,Dark,1970s,98,18,324
+track_73,Song Title 73,Artist 20,Classical,Folk - Type2,Romantic,2010s,126,96,245
+track_74,Song Title 74,Artist 28,Electronic,Folk - Type1,Happy,1970s,104,49,354
+track_75,Song Title 75,Artist 15,Jazz,Hip Hop - Type1,Dark,1990s,72,11,162
+track_76,Song Title 76,Artist 28,Latin,Hip Hop - Type1,Energetic,1970s,173,85,359
+track_77,Song Title 77,Artist 7,R&B,Hip Hop - Type3,Romantic,2020s,151,26,490
+track_78,Song Title 78,Artist 12,Folk,Jazz - Type2,Romantic,1970s,117,63,230
+track_79,Song Title 79,Artist 29,R&B,Metal - Type3,Romantic,1970s,79,89,368
+track_80,Song Title 80,Artist 8,Rock,Electronic - Type1,Happy,2020s,151,86,270
+track_81,Song Title 81,Artist 15,Rock,Metal - Type2,Dark,2000s,131,59,302
+track_82,Song Title 82,Artist 3,Folk,Rock - Type3,Happy,1970s,120,27,455
+track_83,Song Title 83,Artist 14,Folk,Metal - Type2,Calm,2020s,164,49,214
+track_84,Song Title 84,Artist 17,Jazz,Jazz - Type3,Calm,2010s,98,77,493
+track_85,Song Title 85,Artist 4,Folk,Rock - Type2,Dark,1990s,60,33,127
+track_86,Song Title 86,Artist 18,Hip Hop,Metal - Type1,Happy,1990s,62,98,479
+track_87,Song Title 87,Artist 8,R&B,Jazz - Type1,Energetic,1970s,136,99,303
+track_88,Song Title 88,Artist 4,Electronic,Electronic - Type2,Romantic,2000s,151,1,400
+track_89,Song Title 89,Artist 2,Metal,Metal - Type3,Romantic,2000s,121,21,314
+track_90,Song Title 90,Artist 30,Folk,Jazz - Type1,Dark,2010s,122,55,471
+track_91,Song Title 91,Artist 6,Classical,Hip Hop - Type1,Calm,1970s,172,6,314
+track_92,Song Title 92,Artist 22,Rock,Folk - Type1,Calm,1990s,84,92,274
+track_93,Song Title 93,Artist 10,Hip Hop,Hip Hop - Type2,Romantic,2000s,115,81,212
+track_94,Song Title 94,Artist 4,Latin,Folk - Type2,Dark,1970s,92,69,279
+track_95,Song Title 95,Artist 22,Metal,Pop - Type3,Happy,2000s,97,95,180
+track_96,Song Title 96,Artist 29,Electronic,Pop - Type3,Calm,2020s,176,5,241
+track_97,Song Title 97,Artist 18,Metal,Pop - Type3,Happy,2000s,65,3,170
+track_98,Song Title 98,Artist 26,Folk,Electronic - Type2,Calm,1990s,117,53,396
+track_99,Song Title 99,Artist 12,Jazz,Hip Hop - Type2,Calm,1980s,103,23,124
+track_100,Song Title 100,Artist 2,Rock,Folk - Type3,Melancholic,2010s,104,53,211
