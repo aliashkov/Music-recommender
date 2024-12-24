@@ -14,6 +14,9 @@ class EnhancedMusicRecommender:
         # Sort listening history by timestamp
         self.listening_df = self.listening_df.sort_values('timestamp', ascending=False)
         
+        # Aggregate listening data
+        self.aggregated_listening = self._aggregate_listening_data()
+        
         self.user_tracks = defaultdict(dict)
         self.track_users = defaultdict(list)
         self.similarity_matrix = None
@@ -22,62 +25,35 @@ class EnhancedMusicRecommender:
         
         self._initialize_matrices()
         
+    def _aggregate_listening_data(self):
+        """Aggregate listening data for each user-track combination"""
+        # Group by user_id and track_id and aggregate
+        aggregated = self.listening_df.groupby(['user_id', 'track_id']).agg({
+            'play_count': 'sum',
+            'timestamp': 'max',  # Get most recent timestamp
+            'user_mood': 'last'  # Get most recent mood
+        }).reset_index()
+        
+        return aggregated
+        
     def _initialize_matrices(self):
-        """Initialize user-track matrices from CSV data"""
-        for _, row in self.listening_df.iterrows():
+        """Initialize user-track matrices from aggregated CSV data"""
+        for _, row in self.aggregated_listening.iterrows():
             self.add_user_track(row['user_id'], row['track_id'], row['play_count'])
             
-    def add_user_track(self, user_id, track_id, play_count=1):
-        """Add a track listening record for a user"""
-        self.user_tracks[user_id][track_id] = play_count
-        self.track_users[track_id].append(user_id)
-        
-    def build_matrix(self):
-        """Build user-track matrix with enhanced features"""
-        users = list(self.user_tracks.keys())
-        tracks = list(set([track for user in self.user_tracks.values() for track in user.keys()]))
-        
-        self.track_indices = {track: idx for idx, track in enumerate(tracks)}
-        self.tracks_matrix = np.zeros((len(users), len(tracks)))
-        
-        for i, user in enumerate(users):
-            user_data = self.users_df[self.users_df['user_id'] == user].iloc[0]
-            
-            for track, count in self.user_tracks[user].items():
-                j = self.track_indices[track]
-                track_data = self.tracks_df[self.tracks_df['track_id'] == track].iloc[0]
-                
-                # Calculate weighted score
-                base_score = count
-                
-                # Genre preference bonus
-                #if track_data['genre'] == user_data['preferred_genre']:
-                #    base_score *= 1.2
-                    
-                # Audio feature weights
-                audio_score = (
-                    track_data['danceability'] * 0.2 +
-                    track_data['energy'] * 0.2 +
-                    (track_data['loudness'] / -60) * 0.1  # Normalize loudness
-                )
-                
-                # Popularity factor
-                popularity_weight = track_data['popularity'] / 100
-                
-                # Combined score
-                final_score = base_score * (0.6 + 0.2 * popularity_weight + 0.2 * audio_score)
-                
-                self.tracks_matrix[i][j] = final_score
-                
-        self.similarity_matrix = cosine_similarity(self.tracks_matrix.T)
+    def add_user_track(self, user_id, track_id, play_count):
+        """Add or update a track listening record for a user"""
+        current_count = self.user_tracks[user_id].get(track_id, 0)
+        self.user_tracks[user_id][track_id] = current_count + play_count
+        if user_id not in self.track_users[track_id]:
+            self.track_users[track_id].append(user_id)
 
     def get_user_preferences(self, user_id):
         """Calculate user's audio preferences based on recent listening history"""
-        recent_listens = self.listening_df[
-            self.listening_df['user_id'] == user_id
-        ].head(10)
-
-        print(recent_listens)
+        # Get recent unique tracks with their latest play count
+        recent_listens = self.aggregated_listening[
+            self.aggregated_listening['user_id'] == user_id
+        ].sort_values('timestamp', ascending=False).head(10)
         
         if recent_listens.empty:
             return None
@@ -86,28 +62,42 @@ class EnhancedMusicRecommender:
             self.tracks_df['track_id'].isin(recent_listens['track_id'])
         ]
 
-        print(recent_tracks)
+        # Weight the preferences by play count
+        weighted_preferences = {}
+        total_plays = recent_listens['play_count'].sum()
+
+        for feature in ['danceability', 'energy', 'loudness', 'tempo_bpm', 'valence', 'speechiness', 'acousticness']:
+            feature_values = []
+            for _, track in recent_tracks.iterrows():
+                play_count = recent_listens[
+                    recent_listens['track_id'] == track['track_id']
+                ]['play_count'].iloc[0]
+                feature_values.extend([track[feature]] * play_count)
+            weighted_preferences[f'avg_{feature}'] = np.mean(feature_values)
+
+        # Get preferred genres weighted by play count
+        genre_counts = defaultdict(int)
+        for _, track in recent_tracks.iterrows():
+            play_count = recent_listens[
+                recent_listens['track_id'] == track['track_id']
+            ]['play_count'].iloc[0]
+            genre_counts[track['genre']] += play_count
+            
+        preferred_genres = sorted(
+            genre_counts.items(), 
+            key=lambda x: x[1], 
+            reverse=True
+        )[:3]
         
-        preferences = {
-            'avg_danceability': recent_tracks['danceability'].mean(),
-            'avg_energy': recent_tracks['energy'].mean(),
-            'avg_loudness': recent_tracks['loudness'].mean(),
-            'preferred_genres': recent_tracks['genre'].value_counts().head(3).index.tolist(),
-            'avg_tempo': recent_tracks['tempo_bpm'].mean(),
-            'avg_valence': recent_tracks['valence'].mean(),
-            'avg_speechiness': recent_tracks['speechiness'].mean(),
-            'avg_acousticness': recent_tracks['acousticness'].mean(),
-        }
+        weighted_preferences['preferred_genres'] = [genre for genre, _ in preferred_genres]
         
-        return preferences
+        return weighted_preferences
         
     def get_recent_mood(self, user_id):
-        """Get user's most recent mood based on last 10 listening sessions"""
-        recent_listens = self.listening_df[
-            self.listening_df['user_id'] == user_id
-        ].head(10)
-
-        print(recent_listens)
+        """Get user's most recent mood based on aggregated listening sessions"""
+        recent_listens = self.aggregated_listening[
+            self.aggregated_listening['user_id'] == user_id
+        ].sort_values('timestamp', ascending=False).head(10)
         
         if recent_listens.empty:
             return None
@@ -119,11 +109,10 @@ class EnhancedMusicRecommender:
         """Calculate recommendation score based on track features and user preferences"""
         # Base audio feature similarity
         feature_score = (
-            (1 - abs(track['danceability'] - preferences['avg_danceability'])) * 0.15 +
-            (1 - abs(track['energy'] - preferences['avg_energy'])) * 0.15 +
-            (1 - abs(track['valence'] - preferences['avg_valence'])) * 0.1 +
-            (1 - abs(track['speechiness'] - preferences['avg_speechiness'])) * 0.1 +
-            (1 - abs(track['acousticness'] - preferences['avg_acousticness'])) * 0.1
+            (1 - abs(track['danceability'] - preferences['avg_danceability'])) * 0.2 +
+            (1 - abs(track['valence'] - preferences['avg_valence'])) * 0.2 +
+            (1 - abs(track['speechiness'] - preferences['avg_speechiness'])) * 0.2 +
+            (1 - abs(track['acousticness'] - preferences['avg_acousticness'])) * 0.2
         )
         
         # Genre matching
